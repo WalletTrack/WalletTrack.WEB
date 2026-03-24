@@ -17,11 +17,18 @@ export const Auth = () => {
         <h1 className="text-3xl text-slate-300">WalletTrack</h1>
         <h3 className="text-sm text-slate-400">Spend. Track. Save.</h3>
         <h3 className="text-2xl text-slate-300">Welcome back!</h3>
-        {isLogIn ? <LogIn goToDashboard={goToDashboard}/> : <Register goToDashboard={goToDashboard}/>}
+        {isLogIn ? (
+          <LogIn goToDashboard={goToDashboard} />
+        ) : (
+          <Register goToDashboard={goToDashboard} />
+        )}
         <p className="text-slate-300 mt-3">
           {isLogIn ? "Already have an account?" : "Don’t have an account yet?"}{" "}
-          <button className="text-indigo-400 underline hover:cursor-pointer" onClick={() =>setIsLogIn(prev => !prev)}>
-             {isLogIn ? "Register now!" : "LogIn now!"}
+          <button
+            className="text-indigo-400 underline hover:cursor-pointer"
+            onClick={() => setIsLogIn((prev) => !prev)}
+          >
+            {isLogIn ? "Register now!" : "LogIn now!"}
           </button>
         </p>
       </div>
